@@ -33,3 +33,10 @@ class PollCreate(CreateView):
 
     def get_success_url(self):
         return "/poll/{}/".format(self.object.id)
+
+class PollEdit(UpdateView):
+    model = Poll
+    fields = ['subject', 'desc']
+
+    def get_success_url(self):
+        return "/poll/{}/".format(self.object.id)
