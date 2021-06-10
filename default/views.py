@@ -40,3 +40,7 @@ class PollEdit(UpdateView):
 
     def get_success_url(self):
         return "/poll/{}/".format(self.object.id)
+
+class PollDelete(DeleteView):
+    model = Poll
+    success_url = '/poll/'
