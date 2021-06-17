@@ -11,11 +11,15 @@
 
 <p>{{ poll.desc }}</p>
 
+<a href="add/">新增選項</a>
+
 <ul>
     {% for o in option_list %}
     <li>
         <a href="/option/{{ o.id }}/">{{ o.title }}</a>
         : {{ o.count }} 票
+        | <a href="/option/{{ o.id }}/edit/">修改</a>
+        | <a href="/option/{{ o.id }}/delete/">刪除</a>
     </li>
     {% endfor %}
 </ul>  
