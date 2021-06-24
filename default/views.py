@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, RedirectView, CreateView, UpdateView, DeleteView
 from .models import Poll, Option
 
@@ -19,7 +19,7 @@ class PollDetail(DetailView):
         return ctx
 
 class PollVote(RedirectView):
-
+   
     def get_redirect_url(self, *args, **kwargs):
         op = Option.objects.get(id=self.kwargs['oid'])
         op.count += 1
